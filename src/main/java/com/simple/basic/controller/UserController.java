@@ -43,9 +43,17 @@ public class UserController {
 
 	
 	
-	
+	//특정유저들만 접근할 수 있는 페이지
 	@GetMapping("/mypage")
-	public String mypage() {
+	public String mypage(HttpSession session) {
+		
+		//세션검사
+//		if(session.getAttribute("user_id") == null) {
+//			return "redirect:/user/login";
+//		}
+		
+		System.out.println("컨트롤러 실행");
+		
 		return "user/mypage";
 	}
 	
